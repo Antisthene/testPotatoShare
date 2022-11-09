@@ -1,24 +1,48 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the potato share API
 
-Things you may want to cover:
+## Command
 
-* Ruby version
+First run:
+```shell
+bundle
+rake db:create
+rake db:migrate
+```
 
-* System dependencies
+To run
+```shell
+rails s
+```
 
-* Configuration
+To generate data
 
-* Database creation
+```shell
+rake data_generator:generate
+```
+to change the date to generate, shift it by the comment one into `lib/tasks/data_generator.rake`
 
-* Database initialization
 
-* How to run the test suite
+## API calls
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+curl -X GET \
+  -H "Content-type: application/json" \
+  -H "Accept: application/json" \
+  -d '{"selected_date":{"year":"2022","month":"11","day":"8"}}' \
+  "localhost:3000/api/v1/potato_shares"
+```
 
-* Deployment instructions
+```
+ curl -X GET \
+  -H "Content-type: application/json" \
+  -H "Accept: application/json" \
+  -d '{"selected_date":{"year":"2022","month":"11","day":"8"}}' \
+  "localhost:3000/api/v1/best_buys"
+```
 
-* ...
+## Stack
+
+* Rails: 7.0
+* Ruby: 3.1
