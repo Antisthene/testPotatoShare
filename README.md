@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the potato share API
 
-Things you may want to cover:
+## Command
 
-* Ruby version
+First run:
+```shell
+bundle
+rake db:create
+rake db:migrate
+```
 
-* System dependencies
+To run
+```shell
+rails s
+```
 
-* Configuration
+## Stack
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rails: 7.0
+* Ruby: 3.1
