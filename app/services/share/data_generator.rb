@@ -1,14 +1,4 @@
-class DataGenerator
-  START_HOUR = 9
-  MAX_COUNT = 100
-  AVERAGE_PRICE = 100
-
-  def initialize(year=2022, month=11, day=8)
-    @year = year
-    @month = month
-    @day = day
-  end
-
+class Share::DataGenerator < Share::Base
   def generate
     current_time = Time.new(@year, @month, @day, START_HOUR)
     MAX_COUNT.times do
@@ -22,15 +12,5 @@ class DataGenerator
 
   def valid?
     check_date? && empty_share?
-  end
-
-  private
-
-  def check_date?
-    Time.new(@year, @month, @day) rescue nil
-  end
-
-  def empty_share?
-    PotatoShare.at_date(@year, @month, @day).none?
   end
 end

@@ -34,6 +34,14 @@ curl -X GET \
   "localhost:3000/api/v1/potato_shares"
 ```
 
+```
+ curl -X GET \
+  -H "Content-type: application/json" \
+  -H "Accept: application/json" \
+  -d '{"selected_date":{"year":"2022","month":"11","day":"8"}}' \
+  "localhost:3000/api/v1/best_buys"
+```
+
 ## Stack
 
 * Rails: 7.0

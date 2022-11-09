@@ -1,4 +1,5 @@
 class Api::V1::PotatoSharesController < Api::V1::ApplicationController
+  include PotatoShareMethods
   def index
     share_data = request_valid? ? potato_shares : PotatoShare.none
     share_data = share_data.order(store_time: :asc)
@@ -13,12 +14,5 @@ class Api::V1::PotatoSharesController < Api::V1::ApplicationController
     @poptato_shares ||= PotatoShare.at_date(params[:selected_date][:year],
                                       params[:selected_date][:month],
                                       params[:selected_date][:day])
-  end
-
-  def request_valid?
-    params[:selected_date].present? &&
-    params[:selected_date][:year].present? &&
-    params[:selected_date][:month].present? &&
-    params[:selected_date][:day].present?
   end
 end
