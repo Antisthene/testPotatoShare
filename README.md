@@ -15,6 +15,15 @@ To run
 ```shell
 rails s
 ```
+
+To generate data
+
+```shell
+rake data_generator:generate
+```
+to change the date to generate, shift it by the comment one into `lib/tasks/data_generator.rake`
+
+
 ## API calls
 
 ```shell
