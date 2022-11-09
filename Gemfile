@@ -10,3 +10,8 @@ gem "puma", "~> 5.0"
 group :development, :test do
   gem 'pry-rails'
 end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+end
